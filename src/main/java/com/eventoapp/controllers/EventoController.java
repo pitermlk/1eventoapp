@@ -39,7 +39,7 @@ public class EventoController {
         return mv; // RETURN MOSTRA QUAL SERA A VIEW QUE SERA RENDERIZADA.// RETURN MOSTRA QUAL SERA A VIEW QUE SERA RENDERIZADA.
     }
 
-    @RequestMapping(value = "/{codigo}") // ANOTAÇÃO PARA REQUISITAR OU MANDAR INFO PARA O BACKEND MODEL/INFO DESEJADA.
+    @RequestMapping(value = "/{codigo}") // ANOTAÇÃO PARA REQUISITAR OU MANDAR INFO PARA O BACKEND MODEL/INFO DESEJADA..
     public ModelAndView detalhesEvento (@PathVariable("codigo") long codigo) {
         Evento evento = er.findByCodigo(codigo);
         ModelAndView mv = new ModelAndView("evento/detalhesEvento"); // OBJETO PARA DEFINIR QUAL VIEW SERA RENDERIZADA
