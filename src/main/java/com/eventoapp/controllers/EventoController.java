@@ -36,7 +36,7 @@ public class EventoController {
         Iterable<Evento> eventos = er.findAll(); // OBJETO PARA BUSCAR A LISTA NO BANCO
         mv.addObject("eventos", eventos);
 
-        return mv; // RETURN MOSTRA QUAL SERA A VIEW QUE SERA RENDERIZADA.
+        return mv; // RETURN MOSTRA QUAL SERA A VIEW QUE SERA RENDERIZADA.// RETURN MOSTRA QUAL SERA A VIEW QUE SERA RENDERIZADA.
     }
 
     @RequestMapping(value = "/{codigo}") // ANOTAÇÃO PARA REQUISITAR OU MANDAR INFO PARA O BACKEND MODEL/INFO DESEJADA.
