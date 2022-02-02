@@ -26,7 +26,7 @@ public class EventoController {
     @RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
     public String form(Evento evento){ // Intanciando OBJETO Tipo Evento.
 
-        er.save(evento); // METODO PARA SALVAR EVENTO.
+        er.save(evento); // METODO PARA SALVAR EVENTO. // METODO PARA SALVAR EVENTO.
         return "redirect:/cadastrarEvento";
     }
 
