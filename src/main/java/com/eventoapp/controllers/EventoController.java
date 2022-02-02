@@ -42,7 +42,7 @@ public class EventoController {
     @RequestMapping(value = "/{codigo}") // ANOTAÇÃO PARA REQUISITAR OU MANDAR INFO PARA O BACKEND MODEL/INFO DESEJADA.
     public ModelAndView detalhesEvento (@PathVariable("codigo") long codigo) {
         Evento evento = er.findByCodigo(codigo);
-        ModelAndView mv = new ModelAndView("evento/detalhesEvento"); // OBJETO PARA DEFINIR QUAL VIEW SERA RENDERIZADA
+        ModelAndView mv = new ModelAndView("evento/detalhesEvento"); // OBJETO PARA DEFINIR QUAL VIEW SERA RENDERIZADA S.S
         mv.addObject("evento", evento);
         System.out.println("evento" + evento);
 
