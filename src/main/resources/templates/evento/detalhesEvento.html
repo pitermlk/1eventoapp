@@ -21,6 +21,9 @@
             <p>Horario: <span th:text="${evento.horario}"></span></p>
         </div>
 
+    <!-- TAG PARA CHAMAR OUTRO HTML PARA EXECUTAR UM SCRIPT.  -->
+    <th:block th:include="mensagemValidacao"></th:block>
+
          <!-- METODO POST PARA COLETA INFORMAÇÃO DO VIEW PARA O BANCO  -->
         <!-- METODO POST PARA COLETA INFORMAÇÃO DO VIEW PARA O BANCO  -->
     <!-- METODO POST PARA COLETA INFORMAÇÃO DO VIEW PARA O BANCO  -->
@@ -31,6 +34,22 @@
         </form>
 </div>
 
+<div>
+    <H5>Lista de Convidado do Evento</H5>
+    <!-- tech EACH PARA RECEBER OS DADOS DO CONVIDADO DA API QUE BUSCA NO BANCO.  -->
+    <div class="container" th:each="convidado : ${convidados}">
+        <!-- SPAN PARA ACESSAR O CONTEUDO DO BACKEND E MOSTRAR  -->
+        <div class="row">
+            <div class="input-field col s6">
+            <p><span th:text="${convidado.nomeConvidado}"></span></p>
+            </div>
+            <div class="input-field col s3">
+            <p><span th:text="${convidado.rg}" ></span></p>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

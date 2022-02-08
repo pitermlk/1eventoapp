@@ -1,5 +1,6 @@
 package com.eventoapp.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import javax.persistence.ManyToOne;
 public class Convidado {
 
     @Id // INFORMANDO AO SPRING QUE ESSA CLASSE TERA UM ID NO BANCO
+    @NotEmpty // CLASSE INFORMANDO QUE A STRING NAO PODE SER VAZIA.
     private String rg;
 
     public Evento getEvento() {
@@ -19,7 +21,9 @@ public class Convidado {
         this.evento = evento;
     }
 
+    @NotEmpty
     private String nomeConvidado;
+
     // INFORMANDO AO SPRING QUE ESSA CLASSE TERA UMA RELAÇÃO COM OUTRA ENTIDADE DO TIPO EVENTO
     @ManyToOne // UM EVENTO PARA VARIOS CONVIDADOS
     private Evento evento;
