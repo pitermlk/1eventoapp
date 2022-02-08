@@ -25,7 +25,7 @@ public class EventoController {
     private ConvidadoRepository cr;
 
     // http://localhost:8080/cadastrarEvento
-    // methodo GET para chamar a VIEW formEvento.
+    // methodo GET para chamar a VIEW formEvento..
     @RequestMapping(value = "/cadastrarEvento", method = RequestMethod.GET)
     public String form(){
         return "evento/formEvento";
