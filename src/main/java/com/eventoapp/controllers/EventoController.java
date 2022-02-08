@@ -33,9 +33,13 @@ public class EventoController {
 
     // methodo POST para salvar OBJETO do tipo EVENTO no BANCO.
     @RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
-    public String form(Evento evento){ // Intanciando OBJETO Tipo Evento.
-
+    public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){ // Intanciando OBJETO Tipo Evento.
+        if(result.hasErrors()){
+            attributes.addFlashAttribute("mensagem","Vefirique os campos !!");
+            return "redirect:/cadastrarEvento";
+        }
         er.save(evento); // METODO PARA SALVAR EVENTO. // METODO PARA SALVAR EVENTO..
+        attributes.addFlashAttribute("mensagem","Evento Cadastrado com sucesso. !!");
         return "redirect:/cadastrarEvento";
     }
 

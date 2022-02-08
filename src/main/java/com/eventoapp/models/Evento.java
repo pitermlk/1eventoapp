@@ -1,5 +1,7 @@
 package com.eventoapp.models;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
 @Entity
 public class Evento implements Serializable {
 
-    public static final long serialVersioUID = 0L;
+    public static final long serialVersioUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,9 +18,15 @@ public class Evento implements Serializable {
     // INFORMANDO AO SPRING QUE ESSA CLASSE TERA UMA RELAÇÃO COM OUTRA ENTIDADE DO TIPO EVENTO
     @OneToMany // UM EVENTO PARA VARIOS CONVIDADOS
     private List<Convidado> convidados;
+
+    @NotEmpty
     private String nome;
+    @NotEmpty
     private String local;
+    @NotEmpty
     private String data;
+    @NotEmpty
+    private String horario;
 
 
     public long getCodigo() {
@@ -61,5 +69,5 @@ public class Evento implements Serializable {
         this.horario = horario;
     }
 
-    private String horario;
+
 }
