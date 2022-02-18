@@ -7,19 +7,32 @@
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
 <!--Let browser know website is optimized for mobile-->
+<link rel="stylesheet" href="style/style.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <head>
     <title>EventosApp</title>
 </head>
 <body>
-    <H1>Cadastro de Eventos</H1>
+
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Cadastrar Eventos</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/cadastrarEvento" class="waves-effect waves-light btn-large"><i class="material-icons left">add_circle</i>Cadastrar Evento</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
     <h3><a href="/eventos" class="waves-effect waves-ligth btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h3>
 
     <th:block th:include="mensagemValidacao"></th:block>
+
+
+<div class="container formEvento">
     <form class="container" method="post">
        Nome: <input type="text" value="" name="nome">
-
        <div class="row"> <!-- CLASSE ROW PARA FORMATAR AS COLUNAS -->
            <div class="input-field col s6">
                 Local: <input type="text" value="" name="local">
@@ -30,13 +43,13 @@
            <div class="input-field col s3">
                Horario: <input type="text" value="" name="horario">
            </div>
-
-
        </div>
+    <div class="container botalSalvar">
+        <button class="waves-effect waves-ligth btn" type="submit">salvar</button>
+    </div>
 
-
-    <button class="waves-effect waves-ligth btn" type="submit">salvar</button>
     </form>
+</div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
