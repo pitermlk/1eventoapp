@@ -1,0 +1,64 @@
+1º Criar Projeto Spring link: 
+
+2º Subir Projeto Spring JAVA e testar localhost:8080
+
+3º Criar classe execução MAIN. 
+
+4º Criar classe models
+
+5º Criar classe controllers.
+
+6º Criar classes views. 
+
+7º Criar e configurar banco de dados, com base classes models existentes (baixar dependencias), Anotações nas classes Hibernate, Serialize.
+           - Anotações (JPA,BEAN,) classes MODEL. 
+           - Criar Classe DataConfiguration
+           - Configurar banco arquivo  aplication.properties. 
+           - Baixar Dependencias POM.XML 
+
+           OBS!! ANTES DE IR PARA O PROXIMO PASSO TESTAR BANCO 
+
+8º Salvar dados formulario no banco de dados Spring (GET, POST).
+
+9º Buscar dados do formulario no banco 
+
+10º Baixar Materialize.
+
+===================================================================
+
+AULA: Curso Spring Boot AULA 14: 
+https://www.youtube.com/watch?v=wklgHOLtUs4&list=PL8iIphQOyG-DHLpEx1TPItqJamy08fs1D&index=14
+=================================================================== 
+
+ATUALIZAR CV: 
+
+
+========================================
+
+ESTUDAR:
+
+
+
+GIT INTELIJJ 
+REACT 
+REACT NATIVE. 
+ANGULAR 
+SOA - ORACLE 
+AWS = LAMBDA
+MICROSERVIÇOS  
+dependencia LOMBOK. 
+API RESTful Spring Boot. 
+DOCKER.  
+JMS
+
+========================================
+
+FERRAMENTAS: 
+
+GIT.  
+SOURCE TREE.  
+INTELLIJ. 
+POSTMAN. 
+SOAP UI. 
+VISUAL CODE.  
+PL/SQL DEVELOPER. 
