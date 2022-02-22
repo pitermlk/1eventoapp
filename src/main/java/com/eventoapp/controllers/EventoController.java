@@ -75,6 +75,13 @@ public class EventoController {
         return mv;
     }
 
+    @RequestMapping("/deletarEvento")
+    public String deletarEvento(long codigo) { // metodo que é LIDO NO FRONT END para receber a acao.
+        Evento evento = er.findByCodigo(codigo); // BUSCA O EVENTO PELO CODIGO
+        er.delete(evento); // REALIZAR O DELETE DO EVENTO NO CAMPO.
+        return "redirect:/eventos"; // APOS REALIZAR REQUISIÇÃO ELE RETORNA PRA LISTA DE EVENTOS
+    }
+
     // API PARA SALVAR CONVIDADO NO BANCO.
     @RequestMapping(value = "/{codigo}", method = RequestMethod.POST) // ANOTAÇÃO PARA REQUISITAR OU MANDAR INFO PARA O BACKEND MODEL/INFO DESEJADA.
     public String detalhesEventoPost (@PathVariable("codigo") long codigo, @Valid Convidado convidado,  BindingResult result, RedirectAttributes attributes) {
@@ -88,6 +95,19 @@ public class EventoController {
         cr.save(convidado);
         attributes.addFlashAttribute("mensagem","Mensagem enviada com sucesso");
         return "redirect:/{codigo}";
+    }
+
+
+    // DELETANDO CONVIDADO DO EVENTO.
+    @RequestMapping("/deletarConvidado")
+    public String deletarConvidado(String rg){ // // metodo que o FRONT VAI CHAMAR no #mvc.url('EC#deletarEvento').arg(0,evento.codigo)).build()}
+        Convidado convidado = cr.findByRg(rg); // OBJETO QUE SERA PASSADO PARA O FRONT REALIZAR A ACAO DO DELETE.
+        cr.delete(convidado); // REALIZANDO O DELETE DO CONVIDADO
+
+        Evento evento = convidado.getEvento(); // PEGANDO O EVENTO DO CONVIDADO
+        long codigoLong = evento.getCodigo(); // PEGANDO O EVENTO DO CONVIDADO
+        String codigo = "" + codigoLong;
+        return "redirect:/" + codigo;
     }
 
 }
